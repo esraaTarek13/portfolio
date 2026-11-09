@@ -1,0 +1,19 @@
+{
+    "nav": {
+        "home": "الرئيسية",
+        "about": "نبذة",
+        "work": "أعمالي",
+        "journal": "المدونة",
+        "reel": "فيديو تعريفي",
+        "contact": "تواصل",
+        "label": "التنقل الرئيسي"
+    },
+    "theme": {
+        "toLight": "التبديل إلى الوضع الفاتح",
+        "toDark": "التبديل إلى الوضع الداكن"
+    },
+    "language": {
+        "switch": "Switch to English",
+        "short": "EN"
+    }
+}

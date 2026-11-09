@@ -1,0 +1,19 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "work": "Work",
+        "journal": "Journal",
+        "reel": "Intro reel",
+        "contact": "Contact",
+        "label": "Main navigation"
+    },
+    "theme": {
+        "toLight": "Switch to light mode",
+        "toDark": "Switch to dark mode"
+    },
+    "language": {
+        "switch": "التبديل إلى العربية",
+        "short": "ع"
+    }
+}
