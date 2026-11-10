@@ -1,14 +1,11 @@
 import type { ImgHTMLAttributes } from 'react'
-import { cn } from '@/lib/cn'
 
-export default function Logo({ className, alt = '', ...props }: ImgHTMLAttributes<HTMLImageElement>) {
+export default function Logo({ src, alt = '' }: ImgHTMLAttributes<HTMLImageElement>) {
     return (
         <img
+            src={src}
             alt={alt}
-            width={44}
-            height={44}
-            className={cn('block size-11 rounded-full object-contain', className)}
-            {...props}
+            className='h-full w-full object-contain'
         />
     )
 }

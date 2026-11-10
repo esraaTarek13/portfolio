@@ -1,11 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { MainLayout } from '@/components/templates/MainLayout'
 import Home from '@/Pages/Home/Home'
 import About from '@/Pages/About/About'
 import Work from '@/Pages/Work/Work'
 import Journal from '@/Pages/Journal/Journal'
 import Reel from '@/Pages/Reel/Reel'
 import Contact from '@/Pages/Contact/Contact'
+import MainLayout from '@/components/templates/MainLayout'
 
 
 export const router = createBrowserRouter([

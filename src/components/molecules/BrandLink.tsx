@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom'
 import Logo from '@/components/atoms/Logo'
+import type { MouseEventHandler } from 'react'
 
 interface BrandLinkProps {
-    darkSrc: string
-    lightSrc: string
-    label: string
+  label: string
+  onClick?: MouseEventHandler<HTMLAnchorElement>
 }
 
-export default function BrandLink({ darkSrc, lightSrc, label }: BrandLinkProps) {
+export default function BrandLink({ label, onClick }: BrandLinkProps) {
     return (
         <Link
             to="/"
             aria-label={label}
-            className="block w-fit rounded-full transition-opacity duration-(--dur-s) ease-brand hover:opacity-85"
+            className="block w-18 md:w-22 h-18 md:h-22 overflow-hidden rounded-full transition-opacity duration-(--dur-s) ease-brand hover:opacity-85"
+            onClick={onClick}
         >
-            <Logo src={darkSrc} className="light:hidden" />
-            <Logo src={lightSrc} className="hidden light:block" />
+            <Logo alt={label} src="/images/logo.png" />
         </Link>
     )
 }

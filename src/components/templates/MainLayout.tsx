@@ -1,20 +1,26 @@
 import { Outlet } from 'react-router-dom'
-import { sections } from '@/config/sections'
-import BrandLink from '../molecules/BrandLink'
-import NavItem from '../atoms/NavItem'
+import TransitionCircle from '@/components/atoms/TransitionCircle'
+import LoadingScreen from '@/components/organisms/LoadingScreen'
+import Sidebar from '@/components/organisms/Sidebar'
+import useAppReady from '@/hooks/useAppReady'
+import usePageTransition from '@/hooks/usePageTransition'
+import { useTheme } from '@/hooks/useTheme'
 
-export function MainLayout() {
+export default function MainLayout() {
+  const { theme, toggle } = useTheme()
+  const { goTo, circleProps } = usePageTransition()
+  const ready = useAppReady()
+
   return (
     <>
-    <BrandLink darkSrc="images/light-logo.jfif" lightSrc="images/dark-logo.jfif" label="gg" />
-      <nav className="flex gap-2 p-4">
-        {sections.map(({ id, path, icon }) => (
-          <NavItem key={id} to={path} label={id} icon={icon} />
-        ))}
-      </nav>
-      <main>
-        <Outlet />
-      </main>
+      <div className="min-h-dvh" inert={!ready}>
+        <Sidebar theme={theme} onToggleTheme={toggle} onNavigate={goTo} />
+        <main className="ps-(--rail-w)">
+          <Outlet />
+        </main>
+        <TransitionCircle {...circleProps} />
+      </div>
+      <LoadingScreen visible={!ready} />
     </>
   )
 }
