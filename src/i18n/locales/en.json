@@ -15,5 +15,15 @@
   "language": {
     "switch": "التبديل إلى العربية",
     "short": "ع"
+  },
+  "hero": {
+    "badge": "Open to new projects and roles",
+    "name": "Esraa Tarek",
+    "tagline": "Builds fast, responsive interfaces.",
+    "description": "Front-end developer crafting responsive websites and web apps. I turn designs into interfaces that are clear, fast and polished down to the last detail.",
+    "cta": {
+      "work": "View the work",
+      "project": "Start a project"
+    }
   }
 }

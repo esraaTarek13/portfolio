@@ -10,7 +10,7 @@ export default function RailButton({
         <button
             type={type}
             className={cn(
-                'grid size-10 md:size-11.5 place-items-center rounded-full border border-line-strong text-muted',
+                'grid size-10 md:size-11.5 place-items-center rounded-full border border-line-strong text-muted ',
                 'transition-colors duration-(--dur-s) ease-brand hover:bg-elev-2 hover:text-text',
                 className,
             )}

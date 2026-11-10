@@ -5,6 +5,7 @@ import Sidebar from '@/components/organisms/Sidebar'
 import useAppReady from '@/hooks/useAppReady'
 import usePageTransition from '@/hooks/usePageTransition'
 import { useTheme } from '@/hooks/useTheme'
+import Cursor from '../molecules/Cursor'
 
 export default function MainLayout() {
   const { theme, toggle } = useTheme()
@@ -21,6 +22,7 @@ export default function MainLayout() {
         <TransitionCircle {...circleProps} />
       </div>
       <LoadingScreen visible={!ready} />
+      <Cursor />
     </>
   )
 }

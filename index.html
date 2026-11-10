@@ -2,9 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
+    <title>Esraa Tarek | Junior Front-End Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Esraa Tarek, a junior front-end developer building with React and TypeScript."
+    />
+    <meta name="theme-color" content="#0a0c0f" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <script>
+      try {
+        var root = document.documentElement;
+        var lang =
+          (localStorage.getItem("i18nextLng") || "").indexOf("ar") === 0
+            ? "ar"
+            : "en";
+        root.dataset.theme =
+          localStorage.getItem("theme") === "light" ? "light" : "dark";
+        root.lang = lang;
+        root.dir = lang === "ar" ? "rtl" : "ltr";
+      } catch (error) {}
+    </script>
+    <style>
+      html {
+        background: #0a0c0f;
+      }
+      html[data-theme="light"] {
+        background: #f1efe9;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

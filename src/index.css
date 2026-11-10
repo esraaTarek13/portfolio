@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: dark;
+
   --bg: #0a0c0f;
   --bg-elev: #14171c;
   --bg-elev-2: #1b1f25;
@@ -26,13 +28,22 @@
   --dur-l: 0.8s;
 
   --rail-w: 84px;
+  --page-px: 1.25rem;
 
   --ff-sans: "Manrope Variable", system-ui, sans-serif;
   --ff-display: "Fraunces Variable", Georgia, serif;
   --ff-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 }
 
+@media (min-width: 768px) {
+  :root {
+    --page-px: 1.75rem;
+  }
+}
+
 html[data-theme="light"] {
+  color-scheme: light;
+
   --bg: #f1efe9;
   --bg-elev: #ffffff;
   --bg-elev-2: #e9e6dd;
@@ -55,6 +66,12 @@ html[lang="ar"] {
 }
 
 @theme inline {
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+
   --color-bg: var(--bg);
   --color-elev: var(--bg-elev);
   --color-elev-2: var(--bg-elev-2);
@@ -101,6 +118,21 @@ body {
     color var(--dur-m) var(--ease);
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+::-moz-selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg);
+}
+
 button {
   cursor: pointer;
 }
@@ -118,4 +150,9 @@ button {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+html[data-cursor="custom"],
+html[data-cursor="custom"] * {
+  cursor: none;
 }

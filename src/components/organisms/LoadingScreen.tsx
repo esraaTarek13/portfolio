@@ -20,7 +20,7 @@ export default function LoadingScreen({ visible }: LoadingScreenProps) {
             )}
         >
             <div className="flex flex-col items-center gap-8">
-                <p className="font-display-en text-6xl text-text md:text-7xl">{SITE_NAME}</p>
+                <p className="font-display-en text-4xl text-text md:text-5xl">{SITE_NAME}</p>
                 <Spinner />
                 <p role="status" className="font-mono-en text-xs uppercase tracking-[0.2em] text-faint">
                     {LOADING_LABEL}
