@@ -10,14 +10,19 @@ export default function Hero() {
 
   return (
     <section className="flex flex-col items-start gap-7">
-      <Badge variant="muted">{t("hero.badge")}</Badge>
+      <div className="flex justify-center items-center border border-muted/20 rounded-full px-3 md:px-4 py-1">
+        <Badge variant="muted">{t("hero.badge")}</Badge>
+      </div>
 
-      <Heading as="h1" variant="display">
+      <Heading as="h1" variant="display" className="rtl:pt-3">
+        <span className="text-text">{t("hero.greeting")} </span>
         {t("hero.name")}
-        <span className="block italic text-accent font-normal ltr:font-sans ">{t("hero.tagline")}</span>
       </Heading>
 
-      <div className="mb-4">
+      <div className="mb-2 space-y-1.5">
+        <Paragraph variant="lead" className="text-accent font-semibold">
+          {t("hero.jobTitle")}
+        </Paragraph>
         <Paragraph variant="lead">{t("hero.description")}</Paragraph>
       </div>
 

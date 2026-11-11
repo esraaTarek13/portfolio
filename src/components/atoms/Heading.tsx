@@ -12,7 +12,7 @@ interface HeadingProps {
 }
 
 const variants: Record<Variant, string> = {
-  display: "text-[clamp(44px,6.25vw,90px)] leading-[0.98]",
+  display: "text-[clamp(44px,6.25vw,90px)] leading-[0.98] text-accent",
   section: "text-[clamp(26px,3.4vw,40px)] leading-[1.2]",
 };
 
@@ -25,7 +25,7 @@ export default function Heading({
   return (
     <Tag
       className={cn(
-        "font-display font-medium tracking-[-0.01em] rtl:tracking-normal rtl:leading-[1.4] text-balance",
+        "font-display tracking-[-0.01em] rtl:tracking-normal rtl:leading-[1.4] text-balance",
         variants[variant],
         className,
       )}

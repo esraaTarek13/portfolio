@@ -1,15 +1,17 @@
 import type { AnchorHTMLAttributes } from "react";
 import { cn } from "@/lib/cn";
+import type { IconType } from "react-icons";
 
 interface SocialLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   label: string;
+  Icon: IconType;
 }
 
 export default function SocialLink({
   label,
   className,
-  children,
+  Icon,
   ...props
 }: SocialLinkProps) {
   return (
@@ -24,7 +26,7 @@ export default function SocialLink({
       )}
       {...props}
     >
-      {children}
+      <Icon aria-hidden="true" className="size-3.5 md:size-4.5" />
     </a>
   );
 }

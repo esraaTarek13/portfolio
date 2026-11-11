@@ -18,6 +18,8 @@ export default function Paragraph({
   children,
 }: ParagraphProps) {
   return (
-    <p className={cn("text-muted max-w-140", variants[variant], className)}>{children}</p>
+    <p className={cn("text-muted max-w-140", variants[variant], className)}>
+      {children}
+    </p>
   );
 }
