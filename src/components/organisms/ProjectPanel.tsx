@@ -1,0 +1,88 @@
+import * as Dialog from "@radix-ui/react-dialog";
+import { useTranslation } from "react-i18next";
+import { FiArrowRight, FiX } from "react-icons/fi";
+import type { Project } from "@/config/projects";
+import ExternalButton from "../atoms/ExternalButton";
+import IconButton from "../atoms/IconButton";
+import Image from "../atoms/Image";
+import Paragraph from "../atoms/Paragraph";
+import ProjectTitle from "../molecules/ProjectTitle";
+import StackList from "../molecules/StackList";
+
+interface ProjectPanelProps {
+  project: Project | null;
+  onClose: () => void;
+}
+
+export default function ProjectPanel({ project, onClose }: ProjectPanelProps) {
+  const { t } = useTranslation();
+
+  return (
+    <Dialog.Root
+      open={project !== null}
+      onOpenChange={(open) => {
+        if (!open) onClose();
+      }}
+    >
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 bg-black/60" />
+        {project && (
+          <Dialog.Content className="fixed inset-y-0 inset-e-0 flex w-full max-w-140 flex-col border-s border-line bg-elev text-text shadow-card">
+            <Dialog.Close asChild>
+              <IconButton
+                label={t("work.panel.close")}
+                className="absolute inset-e-5 top-5 z-10 sm:inset-e-6 sm:top-6"
+              >
+                <FiX aria-hidden="true" />
+              </IconButton>
+            </Dialog.Close>
+
+            <div className="flex-1 overflow-y-auto px-6 pb-12 pt-19 sm:px-10">
+              <div className="aspect-465/290 w-full max-w-116 overflow-hidden rounded-md mb-4.5">
+                <Image
+                  variant="photo"
+                  src={project.image}
+                  alt={t(`work.projects.${project.key}.alt`)}
+                  width={465}
+                  height={290}
+                  className="object-top"
+                />
+              </div>
+
+              <Dialog.Title asChild>
+                <div className="mb-5.5">
+                  <ProjectTitle
+                    as="h2"
+                    name={t(`work.projects.${project.key}.name`)}
+                    category={t(`work.categories.${project.category}`)}
+                    className="space-y-1.5"
+                    categoryClassName="text-accent"
+                  />
+                </div>
+              </Dialog.Title>
+
+              <div className="border-y border-line py-5.5">
+                <StackList
+                  items={project.stack}
+                  label={t("work.panel.stack")}
+                />
+              </div>
+
+              <Dialog.Description asChild>
+                <Paragraph variant="body" className="max-w-none mt-5.5">
+                  {t(`work.projects.${project.key}.description`)}
+                </Paragraph>
+              </Dialog.Description>
+
+              <ExternalButton href={project.liveUrl} className="mt-6.5">
+                {t("work.panel.viewLive")}
+                <FiArrowRight aria-hidden="true" className="rtl:rotate-180" />
+                <span className="sr-only">{t("work.panel.newTab")}</span>
+              </ExternalButton>
+            </div>
+          </Dialog.Content>
+        )}
+      </Dialog.Portal>
+    </Dialog.Root>
+  );
+}

@@ -132,8 +132,8 @@ body {
   -webkit-font-smoothing: antialiased;
   isolation: isolate;
   transition:
-    background var(--dur-m) var(--ease),
-    color var(--dur-m) var(--ease);
+    background var(--dur-l) var(--ease),
+    color var(--dur-l) var(--ease);
 }
 
 button {
@@ -197,3 +197,5 @@ html[data-cursor="custom"],
 html[data-cursor="custom"] * {
   cursor: none;
 }
+
+

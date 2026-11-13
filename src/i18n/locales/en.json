@@ -17,14 +17,72 @@
     "short": "ع"
   },
   "hero": {
-    "badge": "Available for Projects",
+    "badge": "Available for projects and job opportunities",
     "greeting": "Hi, I'm",
     "name": "Esraa Tarek.",
     "jobTitle": "Front-End Developer",
-    "description": "I build responsive websites and web apps with clean code, turning designs into interfaces that are clear, fast and polished down to the last detail.",
+    "description": "I build the part of your product people actually touch: fast, accessible and easy to use on any screen. Every decision I make starts with the person on the other side of the screen, whether they're shopping, managing data or just trying to get something done quickly.",
     "cta": {
-      "work": "View the work",
+      "work": "View my work",
       "project": "Start a project"
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "photoAlt": "Portrait of Esraa Tarek",
+    "title": "Figma designs, built exactly as designed.",
+    "intro": "I'm a front-end developer based in Cairo. I turn Figma designs into interfaces that match down to the spacing, type and states, with performance, accessibility and SEO built in from the first component, not added at the end. Every layout is built mobile-first, so it works on the smallest screen before it scales up, and every interface is structured as reusable components.",
+    "experience": "I've built front-ends across e-commerce, B2B platforms, dashboards, standard websites, and a multi-portal university system, from two-language sites to five-language ones. Everything is integrated with real APIs, and much of it is live in production.",
+    "features": {
+      "cleanCode": {
+        "title": "Clean code & reusable components",
+        "description": "Small, clear components, each with a single responsibility, so development moves faster and bugs and maintenance are easier to track."
+      },
+      "smartFetching": {
+        "title": "Smart data fetching",
+        "description": "Using caching and reducing the number of requests sent to the server, so pages load faster and the server is under less pressure."
+      },
+      "errorHandling": {
+        "title": "Interfaces that handle errors gracefully",
+        "description": "Handling loading, empty and error states properly, so the interface keeps working even when the API is slow or down."
+      },
+      "performance": {
+        "title": "Fast from the first load",
+        "description": "Optimized images, lazy loading and lean bundles for a quick first load on slow connections."
+      }
+    }
+  },
+  "work": {
+    "eyebrow": "Work",
+    "title": "A working catalogue of what I’ve built.",
+    "categories": {
+      "ecommerce": "E-commerce",
+      "dashboard": "Admin dashboard",
+      "website": "Website",
+      "university": "University system"
+    },
+    "panel": {
+      "close": "Close",
+      "stack": "Stack",
+      "viewLive": "View live project",
+      "newTab": "(opens in a new tab)"
+    },
+    "projects": {
+      "kemet": {
+        "name": "Kemet University",
+        "alt": "Kemet University dashboard screenshot",
+        "description": "A university management platform with four role-based portals: Super Admin, Admin, Faculty and Student. It covers enrollment, grading, assignments and announcements across 40+ screens, and was built solo on the front-end."
+      },
+      "bookshop": {
+        "name": "Book Shop",
+        "alt": "Book Shop storefront screenshot",
+        "description": "An online bookstore built against a real production API. It includes product filtering, a wishlist, a cart and a multi-step checkout, along with login, OTP verification and protected routes."
+      },
+      "designbox": {
+        "name": "Design Box",
+        "alt": "Design-Box screenshot",
+        "description": "A responsive multi-page showcase website for an interior design materials company, with a brand carousel and a project gallery."
+      }
     }
   }
 }

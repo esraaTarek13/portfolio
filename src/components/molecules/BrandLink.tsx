@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "@/components/atoms/Logo";
+import Image from "@/components/atoms/Image";
 import type { MouseEventHandler } from "react";
 
 interface BrandLinkProps {
@@ -11,11 +11,10 @@ export default function BrandLink({ label, onClick }: BrandLinkProps) {
   return (
     <Link
       to="/"
-      aria-label={label}
-      className="block w-14 md:w-16 h-14 md:h-16 overflow-hidden rounded-full transition-opacity duration-(--dur-s) ease-brand hover:opacity-85"
+      className="block h-14 w-14 overflow-hidden rounded-full transition-opacity duration-(--dur-s) ease-brand hover:opacity-85 md:h-16 md:w-16"
       onClick={onClick}
     >
-      <Logo alt={label} src="/images/logo.png" />
+      <Image variant="logo" src="/images/logo.png" alt={label} width={64} height={64} />
     </Link>
   );
 }

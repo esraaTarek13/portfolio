@@ -9,18 +9,24 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="flex flex-col items-start gap-7">
-      <div className="flex justify-center items-center border border-muted/20 rounded-full px-3 md:px-4 py-1">
+    <section
+      id="home"
+      aria-labelledby="hero-title"
+      className="flex flex-col items-start gap-7"
+    >
+      <div className="flex items-center justify-center rounded-full border border-muted/20 px-3 py-1 md:px-4">
         <Badge variant="muted">{t("hero.badge")}</Badge>
       </div>
 
-      <Heading as="h1" variant="display" className="rtl:pt-3">
-        <span className="text-text">{t("hero.greeting")} </span>
+      <Heading as="h1" variant="display" id="hero-title" className="rtl:pt-3">
+        <span className="text-text transition-colors duration-(--dur-l)">
+          {t("hero.greeting")}{" "}
+        </span>
         {t("hero.name")}
       </Heading>
 
       <div className="mb-2 space-y-1.5">
-        <Paragraph variant="lead" className="text-accent font-semibold">
+        <Paragraph variant="lead" className="font-semibold text-accent">
           {t("hero.jobTitle")}
         </Paragraph>
         <Paragraph variant="lead">{t("hero.description")}</Paragraph>

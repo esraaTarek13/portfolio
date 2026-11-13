@@ -1,8 +1,10 @@
+import WorkSection from "@/components/organisms/WorkSection";
+import PageSection from "@/components/templates/PageSection";
 
 export default function Work() {
   return (
-    <div>
-      
-    </div>
-  )
+    <PageSection>
+      <WorkSection />
+    </PageSection>
+  );
 }

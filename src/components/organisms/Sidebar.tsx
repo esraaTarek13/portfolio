@@ -21,8 +21,8 @@ export default function Sidebar({
   const { t } = useTranslation();
 
   return (
-    <aside className="fixed inset-s-0 top-0 bottom-0 z-40 flex md:w-(--rail-w) flex-col items-center justify-between border-e border-line bg-elev py-5.5 px-2 transition-colors duration-(--dur-m) ease-brand">
-      <div className="space-y-6">
+    <aside className="fixed inset-s-0 top-0 bottom-0 z-40 flex md:w-(--rail-w) flex-col items-center justify-between border-e border-line bg-elev pt-9 md:pt-5.5 px-2 transition-all duration-(--dur-m) ease-brand">
+      <div className="space-y-4">
         <BrandLink
           label={t("nav.home")}
           onClick={(event) => onNavigate(event, "/")}
