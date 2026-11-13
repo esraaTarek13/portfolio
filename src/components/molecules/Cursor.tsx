@@ -11,7 +11,7 @@ export default function Cursor() {
         aria-hidden="true"
         style={{ x: ringX, y: ringY }}
         className={cn(
-          "pointer-events-none fixed left-0 top-0 z-90 transition-opacity duration-(--dur-s)",
+          "pointer-events-none fixed left-0 top-0 z-999 transition-opacity duration-(--dur-s)",
           visible ? "opacity-100" : "opacity-0",
         )}
       >
@@ -25,7 +25,7 @@ export default function Cursor() {
         aria-hidden="true"
         style={{ x, y }}
         className={cn(
-          "pointer-events-none fixed left-0 top-0 z-90 transition-opacity duration-(--dur-s)",
+          "pointer-events-none fixed left-0 top-0 z-999 transition-opacity duration-(--dur-s)",
           visible ? "opacity-100" : "opacity-0",
         )}
       >

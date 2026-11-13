@@ -21,7 +21,7 @@ export default function ProjectCard({
       type="button"
       aria-haspopup="dialog"
       onClick={onSelect}
-      className="group block w-full overflow-hidden rounded-md border border-line bg-elev text-start transition-[translate,border-color] duration-(--dur-s) ease-brand hover:-translate-y-1 hover:border-accent focus-visible:-translate-y-1 focus-visible:border-accent"
+      className="group block w-full overflow-hidden rounded-md border border-line text-start transition-[translate,border-color] duration-(--dur-s) ease-brand hover:-translate-y-1 hover:border-accent focus-visible:-translate-y-1 focus-visible:border-accent"
     >
       <div className="aspect-4/3 overflow-hidden">
         <Image
@@ -38,7 +38,6 @@ export default function ProjectCard({
         <ProjectTitle
           name={name}
           category={category}
-          categoryClassName="text-accent-2"
         />
       </div>
     </button>

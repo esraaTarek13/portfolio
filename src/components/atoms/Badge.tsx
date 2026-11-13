@@ -12,8 +12,8 @@ interface BadgeProps {
 const variants: Record<Variant, string> = {
   muted:
     "gap-2 text-muted before:size-1.75 before:rounded-full before:bg-accent before:shadow-[0_0_0_3px_color-mix(in_srgb,var(--accent)_25%,transparent)]",
-  primary: "gap-2.5 text-accent font-extrabold before:h-px before:w-6.5 before:bg-accent",
-  plain: "text-muted font-semibold",
+  primary: "gap-2.5 text-accent-2 font-extrabold before:h-px before:w-6.5 before:bg-accent-2",
+  plain: "text-accent-2 font-semibold",
 };
 
 export default function Badge({
