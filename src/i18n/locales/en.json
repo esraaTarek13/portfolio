@@ -2,9 +2,8 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "resume": "Resume",
     "work": "Work",
-    "journal": "Journal",
-    "reel": "Intro reel",
     "contact": "Contact",
     "label": "Main navigation"
   },

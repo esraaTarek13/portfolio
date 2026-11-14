@@ -34,7 +34,11 @@ export default function ContactInfo() {
               {value}
             </a>
           ) : (
-            (value ?? t(`contact.info.${key}Value`))
+            (value ?? (
+              <span className="transition-colors duration-(--dur-s) ease-brand">
+                {t(`contact.info.${key}Value`)}
+              </span>
+            ))
           )}
         </InfoRow>
       ))}
