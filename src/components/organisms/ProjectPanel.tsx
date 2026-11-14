@@ -1,25 +1,31 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { FiArrowRight, FiX } from "react-icons/fi";
 import type { Project } from "@/config/projects";
-import ExternalButton from "../atoms/ExternalButton";
-import IconButton from "../atoms/IconButton";
+import ExternalLink from "../atoms/ExternalLink";
 import Image from "../atoms/Image";
 import Paragraph from "../atoms/Paragraph";
-import ProjectTitle from "../molecules/ProjectTitle";
 import StackList from "../molecules/StackList";
+import TitleBlock from "../molecules/TitleBlock";
+import Button from "../atoms/Button";
 
 interface ProjectPanelProps {
   project: Project | null;
   onClose: () => void;
 }
 
-const transition = { duration: 0.5, ease: [0.65, 0, 0.35, 1] } as const;
+const TITLE_ID = "project-panel-title";
 
 export default function ProjectPanel({ project, onClose }: ProjectPanelProps) {
   const { t, i18n } = useTranslation();
+  const reduceMotion = useReducedMotion();
   const offscreen = i18n.dir() === "rtl" ? "-100%" : "100%";
+
+  const transition = {
+    duration: reduceMotion ? 0 : 0.5,
+    ease: [0.65, 0, 0.35, 1],
+  } as const;
 
   return (
     <Dialog.Root
@@ -42,7 +48,13 @@ export default function ProjectPanel({ project, onClose }: ProjectPanelProps) {
             </Dialog.Overlay>
           )}
           {project && (
-            <Dialog.Content key="content" asChild forceMount>
+            <Dialog.Content
+              key="content"
+              asChild
+              forceMount
+              aria-labelledby={TITLE_ID}
+              aria-describedby={undefined}
+            >
               <motion.div
                 className="fixed inset-y-0 inset-e-0 z-90 flex w-full max-w-140 flex-col border-s border-line bg-elev text-text shadow-card"
                 initial={{ x: offscreen }}
@@ -51,16 +63,17 @@ export default function ProjectPanel({ project, onClose }: ProjectPanelProps) {
                 transition={transition}
               >
                 <Dialog.Close asChild>
-                  <IconButton
+                  <Button
+                    variant="icon"
                     label={t("work.panel.close")}
-                    className="absolute inset-e-5 top-5 z-100 sm:inset-e-6 sm:top-6"
+                    className="absolute inset-e-5 top-5 sm:inset-e-6 sm:top-6"
                   >
                     <FiX aria-hidden="true" />
-                  </IconButton>
+                  </Button>
                 </Dialog.Close>
 
                 <div className="flex-1 overflow-y-auto px-6 pb-12 pt-19 sm:px-10">
-                  <div className="aspect-465/290 w-full max-w-116 overflow-hidden rounded-md mb-4.5">
+                  <div className="mb-4.5 aspect-465/290 w-full max-w-116 overflow-hidden rounded-md">
                     <Image
                       variant="photo"
                       src={project.image}
@@ -71,16 +84,15 @@ export default function ProjectPanel({ project, onClose }: ProjectPanelProps) {
                     />
                   </div>
 
-                  <Dialog.Title asChild>
-                    <div className="mb-5.5">
-                      <ProjectTitle
-                        as="h2"
-                        name={t(`work.projects.${project.key}.name`)}
-                        category={t(`work.categories.${project.category}`)}
-                        className="space-y-1.5"
-                      />
-                    </div>
-                  </Dialog.Title>
+                  <TitleBlock
+                    id={TITLE_ID}
+                    as="h3"
+                    badge={t(`work.categories.${project.category}`)}
+                    title={t(`work.projects.${project.key}.name`)}
+                    headingVariant="project"
+                    badgeVariant="plain"
+                    className="mb-5.5 space-y-1.5"
+                  />
 
                   <div className="border-y border-line py-5.5">
                     <StackList
@@ -89,20 +101,18 @@ export default function ProjectPanel({ project, onClose }: ProjectPanelProps) {
                     />
                   </div>
 
-                  <Dialog.Description asChild>
-                    <Paragraph variant="body" className="max-w-none mt-5.5">
-                      {t(`work.projects.${project.key}.description`)}
-                    </Paragraph>
-                  </Dialog.Description>
+                  <Paragraph variant="body" className="mt-5.5 max-w-none">
+                    {t(`work.projects.${project.key}.description`)}
+                  </Paragraph>
 
-                  <ExternalButton href={project.liveUrl} className="mt-6.5">
+                  <ExternalLink href={project.liveUrl} className="mt-6.5">
                     {t("work.panel.viewLive")}
                     <FiArrowRight
                       aria-hidden="true"
                       className="rtl:rotate-180"
                     />
                     <span className="sr-only">{t("work.panel.newTab")}</span>
-                  </ExternalButton>
+                  </ExternalLink>
                 </div>
               </motion.div>
             </Dialog.Content>

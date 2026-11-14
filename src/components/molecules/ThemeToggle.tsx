@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { FiMoon, FiSun } from "react-icons/fi";
-import RailButton from "@/components/atoms/RailButton";
 import type { Theme } from "@/hooks/useTheme";
+import Button from "../atoms/Button";
 
 interface ThemeToggleProps {
   theme: Theme;
@@ -10,14 +10,16 @@ interface ThemeToggleProps {
 
 export default function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
   const { t } = useTranslation();
-  const Icon = theme === "dark" ? FiSun : FiMoon;
+  const isDark = theme === "dark";
+  const Icon = isDark ? FiSun : FiMoon;
 
   return (
-    <RailButton
+    <Button
+      variant="rail"
+      label={isDark ? t("theme.toLight") : t("theme.toDark")}
       onClick={onToggle}
-      aria-label={theme === "dark" ? t("theme.toLight") : t("theme.toDark")}
     >
       <Icon aria-hidden="true" className="size-4.5" />
-    </RailButton>
+    </Button>
   );
 }

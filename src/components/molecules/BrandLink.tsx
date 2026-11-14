@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Image from "@/components/atoms/Image";
 import type { MouseEventHandler } from "react";
+import Image from "../atoms/Image";
 
 interface BrandLinkProps {
   label: string;

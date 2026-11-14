@@ -84,5 +84,32 @@
         "description": "A responsive multi-page showcase website for an interior design materials company, with a brand carousel and a project gallery."
       }
     }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk about your project.",
+    "intro": "Send a short brief about what you need, and I'll reply within 24 hours.",
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "errors": {
+      "required": "This field is required.",
+      "invalidEmail": "Enter a valid email address."
+    },
+    "placeholders": {
+      "name": "Your full name",
+      "email": "name@example.com",
+      "message": "Briefly describe what you need"
+    },
+    "submit": "Send via WhatsApp",
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "locationValue": "Cairo, Egypt",
+      "online": "Online",
+      "phone": "Phone"
+    }
   }
 }

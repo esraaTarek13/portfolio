@@ -5,7 +5,7 @@ import Paragraph from "../atoms/Paragraph";
 import HeroActions from "../molecules/HeroActions";
 import SocialLinks from "../molecules/SocialLinks";
 
-export default function Hero() {
+export default function HeroSection() {
   const { t } = useTranslation();
 
   return (
@@ -26,7 +26,7 @@ export default function Hero() {
       </Heading>
 
       <div className="mb-2 space-y-1.5">
-        <Paragraph variant="lead" className="font-semibold text-accent">
+        <Paragraph variant="lead" className="font-bold text-accent">
           {t("hero.jobTitle")}
         </Paragraph>
         <Paragraph variant="lead">{t("hero.description")}</Paragraph>

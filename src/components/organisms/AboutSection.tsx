@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import Image from "../atoms/Image";
 import Paragraph from "../atoms/Paragraph";
 import FeatureCard from "../molecules/FeatureCard";
+import TitleBlock from "../molecules/TitleBlock";
 import { aboutFeatures } from "@/config/aboutFeatures";
-import SectionHeader from "../molecules/SectionHeader";
 
 export default function AboutSection() {
   const { t } = useTranslation();
@@ -12,9 +12,9 @@ export default function AboutSection() {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="flex flex-col gap-10 md:flex-row items-center md:items-start lg:gap-15"
+      className="flex flex-col items-center gap-10 md:flex-row md:items-start lg:gap-15"
     >
-      <div className="aspect-4/5 h-[50%] w-35 md:w-50 lg:w-70 max-w-60 shrink-0 overflow-hidden rounded-lg md:sticky md:top-20">
+      <div className="aspect-4/5 w-35 max-w-60 shrink-0 overflow-hidden rounded-lg md:sticky md:top-20 md:w-50 lg:w-70">
         <Image
           variant="photo"
           src="/images/profile.jpeg"
@@ -26,10 +26,13 @@ export default function AboutSection() {
       </div>
 
       <div className="flex-1">
-        <SectionHeader
+        <TitleBlock
+          wrapper="header"
           id="about-title"
-          eyebrow={t("about.eyebrow")}
+          badge={t("about.eyebrow")}
           title={t("about.title")}
+          className="mb-4.5"
+          badgeClassName="mb-3"
         />
         <Paragraph className="mb-3.5">{t("about.intro")}</Paragraph>
         <Paragraph className="mb-6.5">{t("about.experience")}</Paragraph>

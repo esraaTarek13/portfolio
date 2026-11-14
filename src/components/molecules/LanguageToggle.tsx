@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import RailButton from "@/components/atoms/RailButton";
+import Button from "../atoms/Button";
 import { cn } from "@/lib/cn";
 
 export default function LanguageToggle() {
@@ -7,16 +7,16 @@ export default function LanguageToggle() {
   const nextLanguage = i18n.language.startsWith("ar") ? "en" : "ar";
 
   return (
-    <RailButton
+    <Button
+      variant="rail"
+      label={t("language.switch")}
       onClick={() => void i18n.changeLanguage(nextLanguage)}
-      aria-label={t("language.switch")}
-      lang={nextLanguage}
       className={cn(
-        "text-xs md:text-sm font-semibold",
+        "text-xs font-semibold md:text-sm",
         nextLanguage === "ar" ? "font-arabic" : "font-mono",
       )}
     >
-      {t("language.short")}
-    </RailButton>
+      <span lang={nextLanguage}>{t("language.short")}</span>
+    </Button>
   );
 }

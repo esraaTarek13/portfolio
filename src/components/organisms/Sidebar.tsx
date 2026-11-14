@@ -3,7 +3,7 @@ import LanguageToggle from "../molecules/LanguageToggle";
 import ThemeToggle from "../molecules/ThemeToggle";
 import BrandLink from "../molecules/BrandLink";
 import { useTranslation } from "react-i18next";
-import NavItem from "../molecules/NavItem";
+import NavItem from "../atoms/NavItem";
 import { sections } from "@/config/sections";
 import type { MouseEvent } from "react";
 
@@ -21,7 +21,7 @@ export default function Sidebar({
   const { t } = useTranslation();
 
   return (
-    <aside className="fixed inset-s-0 top-0 bottom-0 z-40 flex md:w-(--rail-w) flex-col items-center justify-between border-e border-line bg-elev pt-9 md:pt-5.5 px-2 transition-all duration-(--dur-m) ease-brand">
+    <aside className="fixed inset-s-0 top-0 bottom-0 z-40 flex md:w-(--rail-w) flex-col items-center justify-between border-e border-line bg-elev py-9 px-2 transition-all duration-(--dur-m) ease-brand">
       <div className="space-y-4">
         <BrandLink
           label={t("nav.home")}
@@ -43,7 +43,7 @@ export default function Sidebar({
           ))}
         </nav>
       </div>
-      <div className="space-y-2.5 md:space-y-4">
+      <div className="flex flex-col justify-center gap-2.5 md:gap-4">
         <LanguageToggle />
         <ThemeToggle theme={theme} onToggle={onToggleTheme} />
       </div>

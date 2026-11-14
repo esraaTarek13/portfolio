@@ -6,7 +6,7 @@ type Variant = "display" | "section" | "card" | "project";
 
 interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   as?: Level;
-  variant?: Variant;
+  variant?: Variant | undefined;
 }
 
 const variants: Record<Variant, string> = {

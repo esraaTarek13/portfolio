@@ -1,10 +1,10 @@
-import Hero from "@/components/organisms/Hero";
+import HeroSection from "@/components/organisms/HeroSection";
 import PageSection from "@/components/templates/PageSection";
 
 export default function Home() {
   return (
     <PageSection>
-      <Hero />
+      <HeroSection />
     </PageSection>
   );
 }

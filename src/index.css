@@ -151,7 +151,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: none;
   outline-offset: 3px;
 }
 
@@ -198,4 +198,22 @@ html[data-cursor="custom"] * {
   cursor: none;
 }
 
+/* ---------- Autofill: keep theme colors ---------- */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text);
+  caret-color: var(--text);
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input:autofill,
+textarea:autofill {
+  -webkit-text-fill-color: var(--text);
+  caret-color: var(--text);
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
 

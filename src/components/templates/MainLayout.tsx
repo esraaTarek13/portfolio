@@ -5,7 +5,7 @@ import Sidebar from "@/components/organisms/Sidebar";
 import useAppReady from "@/hooks/useAppReady";
 import usePageTransition from "@/hooks/usePageTransition";
 import { useTheme } from "@/hooks/useTheme";
-import Cursor from "../molecules/Cursor";
+import Cursor from "../organisms/Cursor";
 
 export default function MainLayout() {
   const { theme, toggle } = useTheme();
